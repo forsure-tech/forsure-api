@@ -8,5 +8,5 @@ import (
 
 // Index function from pingo
 func Index(c *gin.Context) {
-	c.String(http.StatusOK, "xoxo")
+	c.String(http.StatusOK, "pong")
 }

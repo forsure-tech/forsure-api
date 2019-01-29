@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  forsure-web-database-dev:
+    container_name: forsure-web-database-dev
+    build: ./database
+    ports:
+      - 3306:3306
+    volumes:
+      - ./database/data:/var/lib/mysql
+
+networks:
+  default:
+    external:
+      name: forsure
