@@ -4,10 +4,16 @@ services:
   forsure-web-database-dev:
     container_name: forsure-web-database-dev
     build: ./database
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true
     ports:
       - 3306:3306
     volumes:
-      - ./database/data:/var/lib/mysql
+      - forsure-database-data-dev:/var/lib/mysql
+
+volumes:
+  forsure-database-data-dev:
+    driver: local
 
 networks:
   default:
